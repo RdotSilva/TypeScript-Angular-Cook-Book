@@ -11,7 +11,7 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       'Test Recipe',
       'This is only a test',
-      'https://pxhere.com/en/photo/1514179'
+      'https://static2.clutch.co/s3fs-public/logos/recipe_advertising_logo.png'
     ),
   ];
 

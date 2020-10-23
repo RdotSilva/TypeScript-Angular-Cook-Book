@@ -11,13 +11,13 @@
           <input type="number" id="amount" class="form-control" #amountInput />
         </div>
         <div class="col-sm-3 form-group">
-          <label for="category">Category</label>
-          <input
-            type="text"
-            id="category"
-            class="form-control"
-            #categoryInput
-          />
+          <label for="singleSelect"> Category: </label><br />
+          <select name="singleSelect" #categoryInput>
+            <option value="Produce">Produce</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Meat">Meat</option>
+            <option value="Other">Other</option></select
+          ><br />
         </div>
         <div class="col-sm-2">
           <label for="price">Price</label>

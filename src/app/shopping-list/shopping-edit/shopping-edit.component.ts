@@ -18,6 +18,7 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('amountInput') amountInputRef: ElementRef;
   @ViewChild('categoryInput') categoryInputRef: ElementRef;
   @ViewChild('priceInput') priceInputRef: ElementRef;
+  @ViewChild('requiredInput') requiredInputRef: ElementRef;
   @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor() {}

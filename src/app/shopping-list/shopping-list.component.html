@@ -10,8 +10,11 @@
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"
       >
-        {{ ingredient.name }} ({{ ingredient.amount }}) -
-        {{ ingredient.category }} - ${{ ingredient.price }}
+        {{ ingredient.name }}
+        <span class="badge progress-bar-danger badge-pill">{{
+          ingredient.amount
+        }}</span>
+        - {{ ingredient.category }} - ${{ ingredient.price }}
       </a>
     </ul>
   </div>

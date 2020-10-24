@@ -10,9 +10,9 @@
           <label for="amount">Amount</label>
           <input type="number" id="amount" class="form-control" #amountInput />
         </div>
-        <div class="col-sm-3 form-group">
-          <label for="singleSelect"> Category: </label><br />
-          <select name="singleSelect" #categoryInput>
+        <div class="col-sm- form-group">
+          <label for="categorySelect"> Category: </label><br />
+          <select name="categorySelect" #categoryInput>
             <option value="Produce">Produce</option>
             <option value="Dairy">Dairy</option>
             <option value="Meat">Meat</option>
@@ -23,6 +23,11 @@
           <label for="price">Price</label>
           <input type="number" id="price" class="form-control" #priceInput />
         </div>
+        <label for="requiredSelect"> Required? </label><br />
+        <select name="requiredSelect" #requiredInput>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
       </div>
       <div class="row">
         <div class="col-xs-12">

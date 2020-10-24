@@ -18,6 +18,7 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('amountInput') amountInputRef: ElementRef;
   @ViewChild('categoryInput') categoryInputRef: ElementRef;
   @ViewChild('priceInput') priceInputRef: ElementRef;
+  @ViewChild('requiredInput') requiredInputRef: ElementRef;
   @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor() {}
@@ -29,12 +30,14 @@ export class ShoppingEditComponent implements OnInit {
     const ingredientAmount = this.amountInputRef.nativeElement.value;
     const ingredientCategory = this.categoryInputRef.nativeElement.value;
     const ingredientPrice = this.priceInputRef.nativeElement.value;
+    const ingredientRequired = this.requiredInputRef.nativeElement.value;
 
     const newIngredient = new Ingredient(
       ingredientName,
       ingredientAmount,
       ingredientCategory,
-      ingredientPrice
+      ingredientPrice,
+      ingredientRequired
     );
     this.ingredientAdded.emit(newIngredient);
   }

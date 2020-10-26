@@ -12,6 +12,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { FormsModule } from '@angular/forms';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BasicHighlightDirective } from './directives/basic-highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BasicHighlightDirective } from './directives/basic-highlight.directive'
     ShoppingEditComponent,
     FavoritesComponent,
     BasicHighlightDirective,
+    BetterHighlightDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

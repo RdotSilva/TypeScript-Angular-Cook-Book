@@ -28,4 +28,12 @@ export class BetterHighlightDirective implements OnInit {
       'blue'
     );
   }
+
+  @HostListener('mouseleave') mouseLeave(eventData: Event) {
+    this.renderer.setStyle(
+      this.elementRef.nativeElement,
+      'background-color',
+      'transparent'
+    );
+  }
 }

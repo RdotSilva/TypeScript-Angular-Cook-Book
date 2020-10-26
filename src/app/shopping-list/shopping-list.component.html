@@ -9,9 +9,12 @@
         class="list-group-item"
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"
+        [ngStyle]="{
+          backgroundColor: ingredient.required === 'Yes' ? '#a6f593' : '#fa9696'
+        }"
       >
         {{ ingredient.name }}
-        <span class="badge progress-bar-danger badge-pill">{{
+        <span class="badge progress-bar-info badge-pill">{{
           ingredient.amount
         }}</span>
         - {{ ingredient.category }} - ${{ ingredient.price }}

@@ -13,4 +13,8 @@ export class RecipesService {
       'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png'
     ),
   ];
+
+  addRecipe(name: string, description: string, imagePath: string): void {
+    this.recipes.push(new Recipe(name, description, imagePath));
+  }
 }

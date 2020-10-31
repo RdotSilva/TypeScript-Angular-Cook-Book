@@ -14,6 +14,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
+    DropdownOutsideDirective,
     FavoritesComponent,
     BetterHighlightDirective,
     UnlessDirective,

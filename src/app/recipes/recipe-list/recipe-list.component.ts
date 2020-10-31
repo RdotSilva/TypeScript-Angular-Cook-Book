@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { LoggingService } from './../../shared/service/logging.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -22,7 +23,7 @@ export class RecipeListComponent implements OnInit {
     ),
   ];
 
-  constructor() {}
+  constructor(private loggingService: LoggingService) {}
 
   ngOnInit(): void {}
 

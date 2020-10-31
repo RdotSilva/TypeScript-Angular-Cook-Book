@@ -9,5 +9,7 @@ import {
   selector: '[appDropdownOutside]',
 })
 export class DropdownOutsideDirective {
+  @HostBinding('class.open') isOpen = false;
+
   constructor(private elRef: ElementRef) {}
 }

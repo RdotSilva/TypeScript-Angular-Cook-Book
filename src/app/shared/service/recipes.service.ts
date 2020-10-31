@@ -17,4 +17,15 @@ export class RecipesService {
   addRecipe(name: string, description: string, imagePath: string): void {
     this.recipes.push(new Recipe(name, description, imagePath));
   }
+
+  updateRecipe(
+    id: number,
+    name: string,
+    description: string,
+    imagePath: string
+  ): void {
+    this.recipes[id].name = name;
+    this.recipes[id].description = description;
+    this.recipes[id].imagePath = imagePath;
+  }
 }

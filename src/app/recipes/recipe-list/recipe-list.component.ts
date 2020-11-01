@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { RecipesService } from 'src/app/shared/service/recipes.service';
 import { Recipe } from '../recipe.model';
 import { LoggingService } from './../../shared/service/logging.service';
 
@@ -6,23 +7,12 @@ import { LoggingService } from './../../shared/service/logging.service';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
-  providers: [LoggingService],
+  providers: [LoggingService, RecipesService],
 })
 export class RecipeListComponent implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<Recipe>();
 
-  recipes: Recipe[] = [
-    new Recipe(
-      'Test Recipe',
-      'This is only a test',
-      'https://static2.clutch.co/s3fs-public/logos/recipe_advertising_logo.png'
-    ),
-    new Recipe(
-      'Test Recipe Two',
-      'This is another test',
-      'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png'
-    ),
-  ];
+  recipes: Recipe[] = [];
 
   constructor(private loggingService: LoggingService) {}
 

@@ -30,8 +30,4 @@ export class RecipeListComponent implements OnInit {
   onRecipeRemove(): void {
     this.recipes.pop();
   }
-
-  onRecipeDropdown(): void {
-    //TODO:  Implement logic for what happens when Recipe dropdown is selected
-  }
 }

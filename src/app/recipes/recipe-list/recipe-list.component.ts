@@ -7,7 +7,7 @@ import { LoggingService } from './../../shared/service/logging.service';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
-  providers: [LoggingService, RecipesService],
+  providers: [LoggingService],
 })
 export class RecipeListComponent implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<Recipe>();

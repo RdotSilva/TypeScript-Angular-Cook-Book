@@ -26,4 +26,8 @@ export class RecipeListComponent implements OnInit {
   onRecipeSelected(recipe: Recipe) {
     this.recipeWasSelected.emit(recipe);
   }
+
+  onRecipEdit(recipeIndex: number, recipe: Recipe) {
+    this.recipe[recipeIndex] = recipe;
+  }
 }

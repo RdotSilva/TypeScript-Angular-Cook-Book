@@ -12,4 +12,8 @@ export class FavoritesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onAddFavorite(favorite: Favorite) {
+    this.favorites.push(favorite);
+  }
 }

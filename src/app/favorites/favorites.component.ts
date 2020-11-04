@@ -16,4 +16,8 @@ export class FavoritesComponent implements OnInit {
   onAddFavorite(favorite: Favorite) {
     this.favorites.push(favorite);
   }
+
+  onRemoveFavorite() {
+    this.favorites.pop();
+  }
 }

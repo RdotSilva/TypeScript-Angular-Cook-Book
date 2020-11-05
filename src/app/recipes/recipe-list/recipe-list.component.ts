@@ -14,20 +14,9 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
-  constructor(
-    private loggingService: LoggingService,
-    private recipeService: RecipesService
-  ) {}
+  constructor(private recipeService: RecipesService) {}
 
   ngOnInit(): void {
     this.recipes = this.recipeService.recipes;
-  }
-
-  onRecipeSelected(recipe: Recipe) {
-    this.recipeWasSelected.emit(recipe);
-  }
-
-  onRecipEdit(recipeIndex: number, recipe: Recipe) {
-    this.recipe[recipeIndex] = recipe;
   }
 }

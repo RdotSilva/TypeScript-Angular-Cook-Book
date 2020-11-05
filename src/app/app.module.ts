@@ -14,7 +14,6 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
-import { RecipesService } from './shared/service/recipes.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { RecipesService } from './shared/service/recipes.service';
     UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [RecipesService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

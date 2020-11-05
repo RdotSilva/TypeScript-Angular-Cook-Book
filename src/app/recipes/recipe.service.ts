@@ -12,6 +12,11 @@ export class RecipeService {
       'This is another test',
       'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png'
     ),
+    new Recipe(
+      'Test Recipe Three',
+      'This is third test',
+      'https://pxhere.com/en/photo/1630317'
+    ),
   ];
 
   getRecipes() {

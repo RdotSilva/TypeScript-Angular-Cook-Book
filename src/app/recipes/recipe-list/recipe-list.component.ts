@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RecipesService } from 'src/app/shared/service/recipes.service';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 import { LoggingService } from './../../shared/service/logging.service';
 
 @Component({
@@ -14,9 +14,9 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
-  constructor(private recipeService: RecipesService) {}
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.recipes = this.recipeService.recipes;
+    this.recipes = this.recipeService.getRecipes();
   }
 }

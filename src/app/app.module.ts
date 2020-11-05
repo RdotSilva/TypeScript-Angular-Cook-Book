@@ -11,7 +11,6 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { FormsModule } from '@angular/forms';
 import { FavoritesComponent } from './favorites/favorites.component';
-import { UnlessDirective } from './directives/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
 
@@ -28,7 +27,6 @@ import { DropdownOutsideDirective } from './shared/dropdown-outside-click.direct
     DropdownDirective,
     DropdownOutsideDirective,
     FavoritesComponent,
-    UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

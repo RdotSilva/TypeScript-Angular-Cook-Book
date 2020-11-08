@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
@@ -19,7 +12,6 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('categoryInput') categoryInputRef: ElementRef;
   @ViewChild('priceInput') priceInputRef: ElementRef;
   @ViewChild('requiredInput') requiredInputRef: ElementRef;
-  @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor() {}
 
@@ -39,6 +31,5 @@ export class ShoppingEditComponent implements OnInit {
       ingredientPrice,
       ingredientRequired
     );
-    this.ingredientAdded.emit(newIngredient);
   }
 }

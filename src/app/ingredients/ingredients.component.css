@@ -3,3 +3,8 @@
   display: flex;
   background-color: #882222;
 }
+
+.ingredient-table {
+  margin: 2px;
+  font-size: 10;
+}

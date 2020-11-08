@@ -5,4 +5,8 @@ export class ShoppingListService {
     new Ingredient('Apples', 5, 'Produce', 4, 'Yes'),
     new Ingredient('Tomatoes', 10, 'Produce', 10, 'No'),
   ];
+
+  getIngredients() {
+    return this.ingredients.slice();
+  }
 }

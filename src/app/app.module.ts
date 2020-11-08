@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DropdownOutsideDirective } from './shared/dropdown-outside-click.direct
     FavoritesComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

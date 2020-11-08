@@ -8,3 +8,11 @@
   margin: 2px;
   font-size: 10;
 }
+
+.ingredient {
+  font-size: 9px;
+  color: #3399ff;
+  background-color: #882222;
+  display: flex;
+  align-self: auto;
+}

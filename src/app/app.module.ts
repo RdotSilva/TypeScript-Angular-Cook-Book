@@ -14,12 +14,21 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 const appRoutes: Routes = [
   {
     path: 'favorites',
     component: FavoritesComponent,
+  },
+  {
+    path: 'ingredients',
+    component: IngredientsComponent,
+  },
+  {
+    path: 'recipes',
+    component: RecipeListComponent,
   },
 ];
 
@@ -37,7 +46,7 @@ const appRoutes: Routes = [
     DropdownOutsideDirective,
     FavoritesComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [ShoppingListService],
   bootstrap: [AppComponent],
 })

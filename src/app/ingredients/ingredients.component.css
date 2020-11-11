@@ -24,3 +24,9 @@
   border: 1px solid #d3d3d3;
   text-align: center;
 }
+
+.required {
+  color: red;
+  font-style: bold;
+  outline: black;
+}

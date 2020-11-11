@@ -12,4 +12,8 @@ export class IngredientsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onAddIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }

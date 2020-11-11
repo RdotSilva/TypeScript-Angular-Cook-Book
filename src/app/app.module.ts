@@ -30,6 +30,10 @@ const appRoutes: Routes = [
     path: 'recipes',
     component: RecipeListComponent,
   },
+  {
+    path: 'shoppinglist',
+    component: ShoppingListComponent,
+  },
 ];
 
 @NgModule({

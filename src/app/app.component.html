@@ -2,13 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
       <app-shopping-list
         *ngIf="loadedFeature === 'shopping-list'"
       ></app-shopping-list>
-      <app-favorites *ngIf="loadedFeature === 'favorites'"></app-favorites>
+      <app-favorites *ngIf="loadedFeature === 'favorites'"></app-favorites> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>

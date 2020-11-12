@@ -7,7 +7,9 @@
       <ul class="nav navbar-nav">
         <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
         <li>
-          <a href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+          <a routerLink="/shoppinglist" (click)="onSelect('shopping-list')"
+            >Shopping List</a
+          >
         </li>
         <li routerLinkActive="active">
           <a routerLink="/favorites" (click)="onSelect('favorites')"

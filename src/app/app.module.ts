@@ -27,6 +27,10 @@ const appRoutes: Routes = [
     component: IngredientsComponent,
   },
   {
+    path: '',
+    component: RecipeListComponent,
+  },
+  {
     path: 'recipes',
     component: RecipeListComponent,
   },

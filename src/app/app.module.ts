@@ -28,11 +28,11 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: RecipeListComponent,
+    component: RecipesComponent,
   },
   {
     path: 'recipes',
-    component: RecipeListComponent,
+    component: RecipesComponent,
   },
   {
     path: 'shoppinglist',

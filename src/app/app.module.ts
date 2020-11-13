@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     component: ShoppingListComponent,
   },
   {
-    path: 'user/:id',
+    path: 'user/:id:name',
     component: UserComponent,
   },
 ];

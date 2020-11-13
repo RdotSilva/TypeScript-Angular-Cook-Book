@@ -22,4 +22,6 @@ export class FavoritesComponent implements OnInit {
   onShowRecipes() {
     this.router.navigate(['/recipes']);
   }
+
+  // TODO: Handle onReload method
 }

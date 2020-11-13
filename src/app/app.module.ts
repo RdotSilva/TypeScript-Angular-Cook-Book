@@ -16,6 +16,7 @@ import { DropdownOutsideDirective } from './shared/dropdown-outside-click.direct
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RouterModule, Routes } from '@angular/router';
 import { IngredientsComponent } from './ingredients/ingredients.component';
+import { UserComponent } from './user/user.component';
 
 const appRoutes: Routes = [
   {
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     DropdownDirective,
     DropdownOutsideDirective,
     FavoritesComponent,
+    UserComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [ShoppingListService],

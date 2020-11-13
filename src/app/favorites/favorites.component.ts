@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Favorite } from './favorite.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { Favorite } from './favorite.model';
 export class FavoritesComponent implements OnInit {
   favorites: Favorite[];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
@@ -24,6 +24,6 @@ export class FavoritesComponent implements OnInit {
   }
 
   onReload() {
-    this.router.navigate(['favorites']);
+    this.router.navigate(['favorites'], { relativeTo: this.route });
   }
 }

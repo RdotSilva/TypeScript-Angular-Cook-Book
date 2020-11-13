@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Favorite } from './favorite.model';
 
 @Component({
@@ -9,7 +10,7 @@ import { Favorite } from './favorite.model';
 export class FavoritesComponent implements OnInit {
   favorites: Favorite[];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 

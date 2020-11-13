@@ -23,5 +23,7 @@ export class FavoritesComponent implements OnInit {
     this.router.navigate(['/recipes']);
   }
 
-  // TODO: Handle onReload method
+  onReload() {
+    this.router.navigate(['favorites']);
+  }
 }

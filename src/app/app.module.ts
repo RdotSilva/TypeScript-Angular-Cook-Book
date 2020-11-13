@@ -40,8 +40,8 @@ const appRoutes: Routes = [
     component: ShoppingListComponent,
   },
   {
-    path: 'recipe/:id',
-    component: RecipeDetailComponent,
+    path: 'user/:id',
+    component: UserComponent,
   },
 ];
 

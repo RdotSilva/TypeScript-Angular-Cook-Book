@@ -17,4 +17,9 @@ export class FavoritesComponent implements OnInit {
   onAddFavorite(favorite: Favorite) {
     this.favorites.push(favorite);
   }
+
+  // Programmatically trigger router navigation
+  onShowRecipes() {
+    this.router.navigate(['/recipes']);
+  }
 }

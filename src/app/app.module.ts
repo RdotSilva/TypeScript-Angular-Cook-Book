@@ -48,6 +48,7 @@ const appRoutes: Routes = [
     path: 'user/:id/edit',
     component: EditUserComponent,
   },
+  //TODO: Add nested child paths
 ];
 
 @NgModule({

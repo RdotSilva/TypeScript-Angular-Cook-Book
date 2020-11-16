@@ -17,6 +17,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RouterModule, Routes } from '@angular/router';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { UserComponent } from './user/user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   {
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     DropdownOutsideDirective,
     FavoritesComponent,
     UserComponent,
+    EditUserComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [ShoppingListService],

@@ -43,6 +43,10 @@ const appRoutes: Routes = [
     path: 'user/:id/:name',
     component: UserComponent,
   },
+  {
+    path: 'user/:id/edit',
+    component: EditUserComponent,
+  },
 ];
 
 @NgModule({

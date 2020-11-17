@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ export class UserComponent implements OnInit, OnDestroy {
   user: { id: number; name: string };
   paramsSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.user = {
@@ -26,5 +26,9 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
+  }
+
+  onEdit() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
   }
 }

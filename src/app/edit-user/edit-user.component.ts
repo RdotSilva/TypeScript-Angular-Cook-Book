@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EditUserComponent implements OnInit {
   id: number;
   name: string;
+  allowEdit: false;
 
   constructor(private route: ActivatedRoute) {}
 

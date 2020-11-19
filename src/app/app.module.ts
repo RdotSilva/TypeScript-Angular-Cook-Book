@@ -19,6 +19,7 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {
@@ -49,6 +50,10 @@ const appRoutes: Routes = [
     path: 'user/:id/edit',
     component: EditUserComponent,
   },
+  {
+    path: 'notfound',
+    component: PageNotFoundComponent,
+  },
   //TODO: Add nested child paths
 ];
 
@@ -68,6 +73,7 @@ const appRoutes: Routes = [
     UserComponent,
     EditUserComponent,
     FavoriteUserComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [ShoppingListService],

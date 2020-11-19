@@ -51,8 +51,12 @@ const appRoutes: Routes = [
     component: EditUserComponent,
   },
   {
-    path: 'notfound',
+    path: 'not-found',
     component: PageNotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/not-found',
   },
   //TODO: Add nested child paths
 ];

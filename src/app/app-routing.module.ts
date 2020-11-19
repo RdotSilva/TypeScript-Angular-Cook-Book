@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
@@ -47,5 +47,8 @@ const appRoutes: Routes = [
   },
   //TODO: Add nested child paths
 ];
-@NgModule({})
+@NgModule({
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
+})
 export class AppRoutingModule {}

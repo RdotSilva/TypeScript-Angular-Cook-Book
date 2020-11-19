@@ -18,6 +18,7 @@ import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FavoriteUserComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShoppingListService],
   bootstrap: [AppComponent],
 })

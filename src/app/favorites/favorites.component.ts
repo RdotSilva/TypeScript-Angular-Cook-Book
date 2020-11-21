@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { Favorite } from './favorite.model';
 
 @Component({
@@ -10,7 +11,11 @@ import { Favorite } from './favorite.model';
 export class FavoritesComponent implements OnInit {
   favorites: Favorite[];
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -25,5 +30,9 @@ export class FavoritesComponent implements OnInit {
 
   onReload() {
     this.router.navigate(['favorites'], { relativeTo: this.route });
+  }
+
+  onLogin() {
+    this.authService.login();
   }
 }

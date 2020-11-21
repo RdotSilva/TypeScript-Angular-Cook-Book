@@ -35,4 +35,8 @@ export class FavoritesComponent implements OnInit {
   onLogin() {
     this.authService.login();
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
 }

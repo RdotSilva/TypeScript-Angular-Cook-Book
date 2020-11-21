@@ -37,6 +37,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'user/:id/edit',
+    canActivateChild: [AuthGuardService],
     component: EditUserComponent,
   },
   {

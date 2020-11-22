@@ -10,6 +10,7 @@ export class EditUserComponent implements OnInit {
   id: number;
   name: string;
   allowEdit: false;
+  changesSaved: false;
 
   constructor(private route: ActivatedRoute) {}
 

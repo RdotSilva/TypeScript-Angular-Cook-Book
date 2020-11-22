@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
+import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     path: 'user/:id/edit',
     canActivateChild: [AuthGuardService],
     component: EditUserComponent,
+    canDeactivate: [CanDeactivateGuard],
   },
   {
     path: 'not-found',

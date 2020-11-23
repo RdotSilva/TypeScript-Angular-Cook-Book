@@ -15,13 +15,12 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { UserComponent } from './user/user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +35,8 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
     DropdownOutsideDirective,
     FavoritesComponent,
     UserComponent,
-    EditUserComponent,
-    FavoriteUserComponent,
     PageNotFoundComponent,
+    ErrorPageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [

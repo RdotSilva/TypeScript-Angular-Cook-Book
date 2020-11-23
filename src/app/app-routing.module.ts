@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UserComponent } from './user/user.component';
@@ -37,20 +36,14 @@ const appRoutes: Routes = [
     component: UserComponent,
   },
   {
-    path: 'user/:id/edit',
-    canActivateChild: [AuthGuardService],
-    component: EditUserComponent,
-    canDeactivate: [CanDeactivateGuard],
-  },
-  {
     path: 'not-found',
-    component: PageNotFoundComponent,
+    component: ErrorPageComponent,
+    data: { message: 'Page not found!' },
   },
   {
     path: '**',
     redirectTo: '/not-found',
   },
-  //TODO: Add nested child paths
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

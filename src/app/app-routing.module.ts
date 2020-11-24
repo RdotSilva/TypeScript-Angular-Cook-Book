@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
-import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FavoritesResolver } from './favorites/favorites-resolver.service';
 import { FavoritesComponent } from './favorites/favorites.component';

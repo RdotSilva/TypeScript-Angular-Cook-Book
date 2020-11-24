@@ -21,6 +21,7 @@ import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { FavoritesResolver } from './favorites/favorites-resolver.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AuthService,
     AuthGuardService,
     CanDeactivateGuard,
+    FavoritesResolver,
   ],
   bootstrap: [AppComponent],
 })

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { FavoritesResolver } from './favorites/favorites-resolver.service';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     path: 'user/:id/:name',
     canActivate: [AuthGuardService],
     component: UserComponent,
+    resolve: { favorites: FavoritesResolver },
   },
   {
     path: 'not-found',

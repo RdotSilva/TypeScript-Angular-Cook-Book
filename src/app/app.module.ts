@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DropdownOutsideDirective } from './shared/dropdown-outside-click.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { UserComponent } from './user/user.component';
     ShoppingEditComponent,
     DropdownDirective,
     DropdownOutsideDirective,
-    UserComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [ShoppingListService],

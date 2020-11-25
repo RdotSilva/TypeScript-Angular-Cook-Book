@@ -5,27 +5,11 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a routerLink="/recipes" (click)="onSelect('recipe')">Recipes</a>
+        <li>
+          <a (click)="onSelect('recipe')">Recipes</a>
         </li>
-        <li
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a routerLink="/shoppinglist" (click)="onSelect('shopping-list')"
-            >Shopping List</a
-          >
-        </li>
-        <li
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a routerLink="/favorites" (click)="onSelect('favorites')"
-            >Favorites</a
-          >
+        <li>
+          <a (click)="onSelect('shopping-list')">Shopping List</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

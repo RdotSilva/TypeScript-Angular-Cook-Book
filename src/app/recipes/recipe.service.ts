@@ -43,6 +43,16 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
+  /**
+   * Gets a recipe based on the index provided
+   *
+   * @param index - The index of the recipe to fetch
+   * @returns A recipe
+   */
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients);
   }

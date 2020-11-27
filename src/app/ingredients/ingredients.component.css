@@ -60,3 +60,9 @@
   color: #2e2e2e;
   outline: white;
 }
+
+.expensive {
+  color: #dd33dd;
+  outline: white;
+  outline-style: dotted;
+}

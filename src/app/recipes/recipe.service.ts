@@ -39,6 +39,10 @@ export class RecipeService {
 
   constructor(private shoppingListService: ShoppingListService) {}
 
+  /**
+   * Get a list of all recipes
+   * @returns A list of recipes
+   */
   getRecipes() {
     return this.recipes.slice();
   }
@@ -53,6 +57,11 @@ export class RecipeService {
     return this.recipes[index];
   }
 
+  /**
+   * Adds the ingredients included in a recipe to the shopping list
+   *
+   * @param ingredients - The ingredients to add to the shopping list
+   */
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients);
   }

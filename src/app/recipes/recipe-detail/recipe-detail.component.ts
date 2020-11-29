@@ -25,10 +25,16 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
+  /**
+   * Add a recipe's ingredients to the shopping list
+   */
   onAddToShoppingList() {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 
+  /**
+   * Navigate to the edit recipe page for a particular recipe
+   */
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
   }

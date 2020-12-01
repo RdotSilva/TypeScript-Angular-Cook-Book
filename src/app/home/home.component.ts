@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
       console.log(count);
     });
   }
+
+  ngOnDestroy(): void {
+    this.firstObsSubscription.unsubscribe();
+  }
 }

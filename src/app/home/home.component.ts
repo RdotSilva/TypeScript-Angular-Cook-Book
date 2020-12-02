@@ -8,6 +8,7 @@ import { interval, Subscription, observable, Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   private firstObsSubscription: Subscription;
+  myCount: number;
 
   constructor() {}
 
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
 
       setInterval(() => {
         observer.next(count);
-        if (count == 2) {
+        if (count == 5) {
           observer.complete();
         }
         // Throw custom error
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
 
     this.firstObsSubscription = customIntervalObservable.subscribe(
       (data) => {
-        console.log(data);
+        this.myCount = data;
       },
       (error) => {
         console.log(error);

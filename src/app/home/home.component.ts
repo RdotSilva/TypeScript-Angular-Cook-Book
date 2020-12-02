@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subscription, observable, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -33,18 +34,24 @@ export class HomeComponent implements OnInit {
       }, 1000);
     });
 
-    this.firstObsSubscription = customIntervalObservable.subscribe(
-      (data) => {
-        this.myCount = data;
-      },
-      (error) => {
-        console.log(error);
-        alert(error.message);
-      },
-      () => {
-        console.log('Completed!');
-      }
-    );
+    this.firstObsSubscription = customIntervalObservable
+      .pipe(
+        map((data: number) => {
+          return 'My Count: ' + (data + 1);
+        })
+      )
+      .subscribe(
+        (data) => {
+          this.myCount = data;
+        },
+        (error) => {
+          console.log(error);
+          alert(error.message);
+        },
+        () => {
+          console.log('Completed!');
+        }
+      );
   }
 
   ngOnDestroy(): void {

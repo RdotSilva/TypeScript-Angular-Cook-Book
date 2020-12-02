@@ -20,7 +20,9 @@ export class HomeComponent implements OnInit {
 
       setInterval(() => {
         observer.next(count);
-
+        if (count == 2) {
+          observer.complete();
+        }
         // Throw custom error
         if (count > 3) {
           observer.error(new Error('Count is greater than 3'));
@@ -30,9 +32,18 @@ export class HomeComponent implements OnInit {
       }, 1000);
     });
 
-    this.firstObsSubscription = customIntervalObservable.subscribe((data) => {
-      console.log(data);
-    });
+    this.firstObsSubscription = customIntervalObservable.subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+        alert(error.message);
+      },
+      () => {
+        console.log('Completed!');
+      }
+    );
   }
 
   ngOnDestroy(): void {

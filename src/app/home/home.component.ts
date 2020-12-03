@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subscription, observable, Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,15 @@ import { map, filter } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   private firstObsSubscription: Subscription;
   myCount: number;
+  userActivated = false;
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
+    this.userService.activatedEmitter.subscribe((didActivate) => {
+      this.userActivated = didActivate;
+    });
+
     // this.firstObsSubscription = interval(1000).subscribe((count) => {
     //   console.log(count);
     // });

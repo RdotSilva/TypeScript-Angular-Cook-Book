@@ -1,12 +1,10 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
-
   private recipes: Recipe[] = [
     new Recipe(
       'Test Recipe',
@@ -43,7 +41,7 @@ export class RecipeService {
    * Get a list of all recipes
    * @returns A list of recipes
    */
-  getRecipes() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 
@@ -53,7 +51,7 @@ export class RecipeService {
    * @param index - The index of the recipe to fetch
    * @returns A recipe
    */
-  getRecipe(index: number) {
+  getRecipe(index: number): Recipe {
     return this.recipes[index];
   }
 
@@ -62,7 +60,7 @@ export class RecipeService {
    *
    * @param ingredients - The ingredients to add to the shopping list
    */
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+  addIngredientsToShoppingList(ingredients: Ingredient[]): void {
     this.shoppingListService.addIngredients(ingredients);
   }
 }

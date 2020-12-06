@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
 export class UserFormComponent {
   suggestUserName(): void {
     const suggestedName = 'Superuser';
+  }
+
+  onSubmit(form: NgForm): void {
+    console.log(form);
   }
 }

@@ -18,8 +18,12 @@
               >Please enter a valid username!</span
             >
           </div>
-          <button class="btn btn-default" type="button">
-            Suggest an Username
+          <button
+            class="btn btn-default"
+            type="button"
+            (click)="suggestUserName()"
+          >
+            Suggest a Username
           </button>
           <div class="form-group">
             <label for="email">Mail</label>

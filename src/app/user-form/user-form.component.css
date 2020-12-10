@@ -7,3 +7,8 @@ input.ng-invalid.ng-touched {
   font-size: large;
   border: solid;
 }
+
+.required {
+  color: red;
+  background-color: black;
+}

@@ -16,4 +16,8 @@ export class UserFormComponent implements OnInit {
       gender: new FormControl('male'),
     });
   }
+
+  onSubmit() {
+    console.log(this.signupForm);
+  }
 }

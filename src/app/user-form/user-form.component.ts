@@ -20,10 +20,17 @@ export class UserFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Log form details on submit
+   *
+   */
   onSubmit() {
     console.log(this.signupForm);
   }
 
+  /**
+   * Add a hobby control to the form array
+   */
   onAddHobby() {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signupForm.get('hobbies')).push(control);

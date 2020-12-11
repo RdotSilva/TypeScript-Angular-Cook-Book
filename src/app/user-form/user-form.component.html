@@ -45,6 +45,10 @@
             }}
           </label>
         </div>
+        <h4>Your Hobbies</h4>
+        <button class="btn btn-default" type="button" (click)="onAddHobby()">
+          Add Hobby
+        </button>
         <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block"
           >Please enter a valid gender!</span
         >

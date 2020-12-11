@@ -45,10 +45,12 @@
             }}
           </label>
         </div>
-        <h4>Your Hobbies</h4>
-        <button class="btn btn-default" type="button" (click)="onAddHobby()">
-          Add Hobby
-        </button>
+        <div formArrayName="hobbies">
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-default" type="button" (click)="onAddHobby()">
+            Add Hobby
+          </button>
+        </div>
         <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block"
           >Please enter a valid gender!</span
         >

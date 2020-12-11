@@ -12,3 +12,9 @@ input.ng-invalid.ng-touched {
   color: red;
   background-color: black;
 }
+
+.special {
+  border-radius: 2px;
+  border-style: dashed;
+  background-color: orange;
+}

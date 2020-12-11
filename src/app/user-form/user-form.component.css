@@ -18,3 +18,9 @@ input.ng-invalid.ng-touched {
   border-style: dashed;
   background-color: orange;
 }
+
+.dirty {
+  border-color: pink;
+  border-radius: 1px;
+  border-style: groove;
+}

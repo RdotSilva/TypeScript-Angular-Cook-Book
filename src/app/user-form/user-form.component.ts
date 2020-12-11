@@ -15,7 +15,7 @@ export class UserFormComponent implements OnInit {
       userData: new FormGroup({
         username: new FormControl(null, [
           Validators.required,
-          this.forbiddenNames,
+          this.forbiddenNames.bind(this),
         ]),
         email: new FormControl(null, [Validators.required, Validators.email]),
       }),
@@ -41,7 +41,7 @@ export class UserFormComponent implements OnInit {
   }
 
   forbiddenNames(control: FormControl): { [s: string]: boolean } {
-    if (this.forbiddenUsernames.indexOf(control.value)) {
+    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return { nameIsForbidden: true };
     }
     return null;

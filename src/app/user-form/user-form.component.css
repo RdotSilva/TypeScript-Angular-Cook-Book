@@ -24,3 +24,9 @@ input.ng-invalid.ng-touched {
   border-radius: 1px;
   border-style: groove;
 }
+
+.pending {
+  align-self: center;
+  font-variant: small-caps;
+  pointer-events: stroke;
+}

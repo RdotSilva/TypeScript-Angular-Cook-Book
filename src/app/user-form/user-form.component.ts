@@ -18,7 +18,11 @@ export class UserFormComponent implements OnInit {
           Validators.required,
           this.forbiddenNames.bind(this),
         ]),
-        email: new FormControl(null, [Validators.required, Validators.email]),
+        email: new FormControl(
+          null,
+          [Validators.required, Validators.email],
+          this.forbiddenEmails
+        ),
       }),
       gender: new FormControl('male'),
       hobbies: new FormArray([]),
@@ -40,7 +44,11 @@ export class UserFormComponent implements OnInit {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
-
+  /**
+   * Validator used to check for forbidden name in form input
+   *
+   * @param control - The Form Control to check
+   */
   forbiddenNames(control: FormControl): { [s: string]: boolean } {
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return { nameIsForbidden: true };
@@ -48,6 +56,11 @@ export class UserFormComponent implements OnInit {
     return null;
   }
 
+  /**
+   * Async Validator used to check for forbidden email in form input
+   *
+   * @param control - The Form Control to check
+   */
   forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {

@@ -31,6 +31,15 @@ export class UserFormComponent implements OnInit {
     this.signupForm.valueChanges.subscribe((value) => {
       console.log(value);
     });
+
+    this.signupForm.patchValue({
+      userData: {
+        username: 'Ryan',
+        email: 'ryan@test.com',
+      },
+      gender: 'male',
+      hobbies: [],
+    });
   }
 
   /**

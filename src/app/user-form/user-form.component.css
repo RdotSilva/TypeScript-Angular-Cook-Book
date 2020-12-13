@@ -30,3 +30,9 @@ input.ng-invalid.ng-touched {
   font-variant: small-caps;
   pointer-events: stroke;
 }
+
+.warning {
+  color: red;
+  stroke: black;
+  background-color: orange;
+}

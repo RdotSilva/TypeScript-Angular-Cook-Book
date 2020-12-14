@@ -10,6 +10,7 @@
             class="form-control"
             name="name"
             ngModel
+            required
           />
         </div>
         <div class="col-sm-2">
@@ -20,6 +21,8 @@
             class="form-control"
             name="amount"
             ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
           />
         </div>
         <div class="col-sm-2">
@@ -41,7 +44,7 @@
             <option value="Other">Other</option></select
           ><br />
           <label for="requiredSelect"> Required? </label><br />
-          <select name="requiredSelect" ngModel>
+          <select name="requiredSelect" ngModel required>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
@@ -49,7 +52,13 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success button" type="submit">Add</button>
+          <button
+            class="btn btn-success button"
+            type="submit"
+            [disabled]="!f.valid"
+          >
+            Add
+          </button>
           <button class="btn btn-danger button" type="button">Delete</button>
           <button class="btn btn-primary button" type="button">Clear</button>
         </div>

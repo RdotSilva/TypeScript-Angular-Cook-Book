@@ -35,6 +35,11 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Add an item to the shopping list
+   *
+   * @param form - The form that contains the item to add to the shopping list
+   */
   onAddItem(form: NgForm) {
     const { name, amount, category, price, required } = form.value;
 

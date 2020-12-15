@@ -1,3 +1,4 @@
+import { timeStamp } from 'console';
 import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 
@@ -14,6 +15,10 @@ export class ShoppingListService {
 
   getIngredients() {
     return this.ingredients.slice();
+  }
+
+  getIngredient(index: number) {
+    return this.ingredients[index];
   }
 
   addIngredient(ingredient: Ingredient) {

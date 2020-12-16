@@ -1,0 +1,6 @@
+.delete {
+  display: flex;
+  flex-direction: column;
+  color: beige;
+  border: 2em;
+}

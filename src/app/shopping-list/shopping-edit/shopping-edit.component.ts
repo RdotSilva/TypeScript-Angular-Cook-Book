@@ -41,14 +41,14 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
    * @param form - The form that contains the item to add to the shopping list
    */
   onSubmit(form: NgForm) {
-    const { name, amount, category, price, required } = form.value;
+    const { name, amount, categorySelect, price, requiredSelect } = form.value;
 
     const newIngredient = new Ingredient(
       name,
       amount,
-      category,
+      categorySelect,
       price,
-      required
+      requiredSelect
     );
 
     if (this.editMode) {

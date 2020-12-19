@@ -26,10 +26,17 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
+  /**
+   * Logs the recipe form details to console
+   * Placeholder - will add more logic to this in the future
+   */
   onSubmit() {
     console.log(this.recipeForm);
   }
 
+  /**
+   * Initialize the recipe form and auto populate data
+   */
   private initForm() {
     let recipeName = '';
     let recipeImagePath = '';

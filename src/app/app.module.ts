@@ -17,6 +17,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipeServersComponent } from './recipe-servers/recipe-servers.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RecipeServersComponent } from './recipe-servers/recipe-servers.componen
     RecipeStartComponent,
     RecipeEditComponent,
     RecipeServersComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,

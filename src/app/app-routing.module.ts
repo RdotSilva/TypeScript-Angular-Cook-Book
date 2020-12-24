@@ -1,3 +1,4 @@
+import { RecipeServersComponent } from './recipe-servers/recipe-servers.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     ],
   },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'recipe-servers', component: RecipeServersComponent },
 ];
 
 @NgModule({

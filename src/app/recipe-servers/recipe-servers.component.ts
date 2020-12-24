@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recipe-servers.component.html',
   styleUrls: ['./recipe-servers.component.css'],
 })
-export class RecipeServersComponent implements OnInit {
+export class RecipeServersComponent {
   servers = [
     {
       instanceType: 'medium',
@@ -33,7 +33,16 @@ export class RecipeServersComponent implements OnInit {
     },
   ];
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  getStatusClasses(server: {
+    instanceType: string;
+    name: string;
+    status: string;
+    started: Date;
+  }) {
+    return {
+      'list-group-item-success': server.status === 'stable',
+      'list-group-item-warning': server.status === 'offline',
+      'list-group-item-danger': server.status === 'critical',
+    };
+  }
 }

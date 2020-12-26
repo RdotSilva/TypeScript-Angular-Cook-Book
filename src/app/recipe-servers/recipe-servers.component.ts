@@ -33,6 +33,8 @@ export class RecipeServersComponent {
     },
   ];
 
+  filteredStatus = '';
+
   getStatusClasses(server: {
     instanceType: string;
     name: string;

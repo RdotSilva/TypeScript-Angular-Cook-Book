@@ -20,6 +20,7 @@ import { RecipeServersComponent } from './recipe-servers/recipe-servers.componen
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { RecipePostsComponent } from './recipe-posts/recipe-posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RecipePostsComponent } from './recipe-posts/recipe-posts.component';
     AppRoutingModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],

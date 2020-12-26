@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ShortenPipe implements PipeTransform {
   /**
-   * Adds the ingredients included in a recipe to the shopping list
+   * A pipe used to shorten a text value based on a limit
    *
    * @param value - The value to shorten
    * @param limit - The max number of characters to show before shortening a value

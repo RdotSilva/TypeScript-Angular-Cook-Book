@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-servers.component.css'],
 })
 export class RecipeServersComponent {
+  appStatus = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('stable');
+    }, 2000);
+  });
+
   servers = [
     {
       instanceType: 'medium',

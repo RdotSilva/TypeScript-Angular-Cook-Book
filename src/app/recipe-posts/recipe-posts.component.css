@@ -5,3 +5,10 @@
 .row {
   margin: 20px 0;
 }
+
+.list {
+  margin: 5px;
+  color: #4f3f4f;
+  border-radius: 1px;
+  fill: aliceblue;
+}

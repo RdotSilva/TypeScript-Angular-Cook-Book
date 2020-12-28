@@ -11,7 +11,9 @@ export class RecipePostsComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetchPosts();
+  }
 
   onCreatePost(postData: { title: string; content: string }) {
     // Send Http request
@@ -24,9 +26,16 @@ export class RecipePostsComponent implements OnInit {
 
   onFetchPosts() {
     // Send Http request
+    this.fetchPosts();
   }
 
   onClearPosts() {
     // Send Http request
+  }
+
+  private fetchPosts() {
+    this.http.get(`${config.url}`).subscribe((posts) => {
+      console.log(posts);
+    });
   }
 }

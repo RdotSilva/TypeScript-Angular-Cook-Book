@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { config } from '../../../config';
 import { map } from 'rxjs/operators';
+import { Post } from './post.model';
 @Component({
   selector: 'app-recipe-posts',
   templateUrl: './recipe-posts.component.html',
@@ -16,10 +17,10 @@ export class RecipePostsComponent implements OnInit {
     this.fetchPosts();
   }
 
-  onCreatePost(postData: { title: string; content: string }) {
+  onCreatePost(postData: Post) {
     // Send Http request
     this.http
-      .post(`${config.url}/posts.json`, postData)
+      .post<{ name: string }>(`${config.url}/posts.json`, postData)
       .subscribe((responseData) => {
         console.log(responseData);
       });
@@ -36,10 +37,10 @@ export class RecipePostsComponent implements OnInit {
 
   private fetchPosts() {
     this.http
-      .get(`${config.url}`)
+      .get<{ [key: string]: Post }>(`${config.url}`)
       .pipe(
         map((responseData) => {
-          const postsArray = [];
+          const postsArray: Post[] = [];
           for (let key in responseData) {
             if (responseData.hasOwnProperty(key)) {
               postsArray.push({ ...responseData[key], id: key });

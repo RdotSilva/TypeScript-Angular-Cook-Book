@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { config } from '../../../config';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-recipe-posts',
   templateUrl: './recipe-posts.component.html',
@@ -34,8 +35,21 @@ export class RecipePostsComponent implements OnInit {
   }
 
   private fetchPosts() {
-    this.http.get(`${config.url}`).subscribe((posts) => {
-      console.log(posts);
-    });
+    this.http
+      .get(`${config.url}`)
+      .pipe(
+        map((responseData) => {
+          const postsArray = [];
+          for (let key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              postsArray.push({ ...responseData[key], id: key });
+            }
+          }
+          return postsArray;
+        })
+      )
+      .subscribe((posts) => {
+        console.log(posts);
+      });
   }
 }

@@ -9,7 +9,7 @@ import { Post } from './post.model';
   styleUrls: ['./recipe-posts.component.css'],
 })
 export class RecipePostsComponent implements OnInit {
-  loadedPosts = [];
+  loadedPosts: Post[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -50,7 +50,7 @@ export class RecipePostsComponent implements OnInit {
         })
       )
       .subscribe((posts) => {
-        console.log(posts);
+        this.loadedPosts = posts;
       });
   }
 }

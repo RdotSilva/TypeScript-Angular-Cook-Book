@@ -47,3 +47,6 @@ Thumbs.db
 
 # Config file
 config.ts
+
+# Proxy Config
+proxy.conf.json

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { config } from '../../../config';
 import { map } from 'rxjs/operators';
 import { Post } from './post.model';
+import { PostsService } from './posts.service';
 @Component({
   selector: 'app-recipe-posts',
   templateUrl: './recipe-posts.component.html',
@@ -12,19 +13,14 @@ export class RecipePostsComponent implements OnInit {
   loadedPosts: Post[] = [];
   isFetching = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private postsService: PostsService) {}
 
   ngOnInit() {
     this.fetchPosts();
   }
 
   onCreatePost(postData: Post) {
-    // Send Http request
-    this.http
-      .post<{ name: string }>(`${config.url}/posts.json`, postData)
-      .subscribe((responseData) => {
-        console.log(responseData);
-      });
+    this.postsService.createAndStorePost(postData.title, postData.content);
   }
 
   onFetchPosts() {

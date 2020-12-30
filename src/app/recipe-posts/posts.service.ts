@@ -1,6 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { config } from '../../../config';
+import { Post } from './post.model';
 @Injectable({
   providedIn: 'root',
 })
-export class PostsService {}
+export class PostsService {
+  constructor(private http: HttpClient) {}
+
+  createAndStorePost(title: string, content: string) {
+    const postData: Post = {
+      title: title,
+      content: content,
+    };
+
+    this.http
+      .post<{ name: string }>(`${config.url}/posts.json`, postData)
+      .subscribe((responseData) => {
+        console.log(responseData);
+      });
+  }
+}

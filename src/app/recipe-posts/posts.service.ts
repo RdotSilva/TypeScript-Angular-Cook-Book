@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../../config';
 import { Post } from './post.model';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,5 +20,22 @@ export class PostsService {
       .subscribe((responseData) => {
         console.log(responseData);
       });
+  }
+
+  fetchPosts() {
+    this.http
+      .get<{ [key: string]: Post }>(`${config.url}`)
+      .pipe(
+        map((responseData) => {
+          const postsArray: Post[] = [];
+          for (let key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              postsArray.push({ ...responseData[key], id: key });
+            }
+          }
+          return postsArray;
+        })
+      )
+      .subscribe((posts) => {});
   }
 }

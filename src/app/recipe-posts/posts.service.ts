@@ -9,6 +9,11 @@ import { map } from 'rxjs/operators';
 export class PostsService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Create a new post
+   * @param title - Title of the post
+   * @param content - Content of the post
+   */
   createAndStorePost(title: string, content: string) {
     const postData: Post = {
       title: title,
@@ -22,6 +27,9 @@ export class PostsService {
       });
   }
 
+  /**
+   * Fetch all existing posts
+   */
   fetchPosts() {
     this.http
       .get<{ [key: string]: Post }>(`${config.url}`)

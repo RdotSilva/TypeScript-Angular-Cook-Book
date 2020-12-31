@@ -44,6 +44,9 @@ export class PostsService {
     );
   }
 
+  /**
+   * Delete all existing posts
+   */
   deletePosts() {
     return this.http.delete(`${config.url}/posts.json`);
   }

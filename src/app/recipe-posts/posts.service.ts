@@ -31,19 +31,16 @@ export class PostsService {
    * Fetch all existing posts
    */
   fetchPosts() {
-    this.http
-      .get<{ [key: string]: Post }>(`${config.url}`)
-      .pipe(
-        map((responseData) => {
-          const postsArray: Post[] = [];
-          for (let key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              postsArray.push({ ...responseData[key], id: key });
-            }
+    return this.http.get<{ [key: string]: Post }>(`${config.url}`).pipe(
+      map((responseData) => {
+        const postsArray: Post[] = [];
+        for (let key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            postsArray.push({ ...responseData[key], id: key });
           }
-          return postsArray;
-        })
-      )
-      .subscribe((posts) => {});
+        }
+        return postsArray;
+      })
+    );
   }
 }

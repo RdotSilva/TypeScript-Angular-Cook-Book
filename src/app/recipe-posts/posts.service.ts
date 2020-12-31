@@ -43,4 +43,8 @@ export class PostsService {
       })
     );
   }
+
+  deletePosts() {
+    return this.http.delete(`${config.url}/posts.json`);
+  }
 }

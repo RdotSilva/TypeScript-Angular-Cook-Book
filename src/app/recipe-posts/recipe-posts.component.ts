@@ -12,6 +12,7 @@ import { PostsService } from './posts.service';
 export class RecipePostsComponent implements OnInit {
   loadedPosts: Post[] = [];
   isFetching = false;
+  error = null;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
@@ -36,9 +37,14 @@ export class RecipePostsComponent implements OnInit {
 
   private loadPosts() {
     this.isFetching = true;
-    this.postsService.fetchPosts().subscribe((posts) => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    });
+    this.postsService.fetchPosts().subscribe(
+      (posts) => {
+        this.isFetching = false;
+        this.loadedPosts = posts;
+      },
+      (error) => {
+        this.error = error.message;
+      }
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { config } from '../../../config';
 import { map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './recipe-posts.component.html',
   styleUrls: ['./recipe-posts.component.css'],
 })
-export class RecipePostsComponent implements OnInit {
+export class RecipePostsComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
@@ -52,5 +52,9 @@ export class RecipePostsComponent implements OnInit {
         this.error = error.message;
       }
     );
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
   }
 }

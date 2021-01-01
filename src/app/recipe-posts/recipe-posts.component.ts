@@ -4,6 +4,7 @@ import { config } from '../../../config';
 import { map } from 'rxjs/operators';
 import { Post } from './post.model';
 import { PostsService } from './posts.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-recipe-posts',
   templateUrl: './recipe-posts.component.html',
@@ -13,10 +14,15 @@ export class RecipePostsComponent implements OnInit {
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
+  private errorSub: Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
   ngOnInit() {
+    this.errorSub = this.postsService.error.subscribe((errorMessage) => {
+      this.error = errorMessage;
+    });
+
     this.loadPosts();
   }
 

@@ -1,8 +1,13 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpEventType,
+  HttpHeaders,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../../config';
 import { Post } from './post.model';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -24,7 +29,9 @@ export class PostsService {
     };
 
     this.http
-      .post<{ name: string }>(`${config.url}/posts.json`, postData)
+      .post<{ name: string }>(`${config.url}/posts.json`, postData, {
+        observe: 'response',
+      })
       .subscribe(
         (responseData) => {
           console.log(responseData);
@@ -67,6 +74,17 @@ export class PostsService {
    * Delete all existing posts
    */
   deletePosts() {
-    return this.http.delete(`${config.url}/posts.json`);
+    return this.http
+      .delete(`${config.url}/posts.json`, {
+        observe: 'events',
+      })
+      .pipe(
+        tap((event) => {
+          console.log(event);
+          if (event.type === HttpEventType.Response) {
+            console.log(event.body);
+          }
+        })
+      );
   }
 }

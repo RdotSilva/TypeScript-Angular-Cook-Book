@@ -26,6 +26,10 @@ export class RecipePostsComponent implements OnInit, OnDestroy {
     this.loadPosts();
   }
 
+  /**
+   * Create a new post using posts service
+   * @param postData - Content of the post
+   */
   onCreatePost(postData: Post) {
     this.postsService.createAndStorePost(postData.title, postData.content);
   }
@@ -35,6 +39,9 @@ export class RecipePostsComponent implements OnInit, OnDestroy {
     this.loadPosts();
   }
 
+  /**
+   * Delete all posts using the posts service
+   */
   onClearPosts() {
     this.postsService.deletePosts().subscribe(() => {
       this.loadedPosts = [];

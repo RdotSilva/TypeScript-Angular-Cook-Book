@@ -1,4 +1,6 @@
+import { tap } from 'rxjs/operators';
 import {
+  HttpEventType,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
@@ -14,6 +16,13 @@ export class AuthInterceptorService implements HttpInterceptor {
       headers: req.headers.append('Auth', 'xyz'),
     });
 
-    return next.handle(modifiedRequest);
+    return next.handle(modifiedRequest).pipe(
+      tap((event) => {
+        console.log(event);
+        if (event.type === HttpEventType.Response) {
+          console.log(`Response arrived, body data: ${event.body}`);
+        }
+      })
+    );
   }
 }

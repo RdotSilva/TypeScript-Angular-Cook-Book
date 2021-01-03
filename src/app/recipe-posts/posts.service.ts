@@ -77,6 +77,7 @@ export class PostsService {
     return this.http
       .delete(`${config.url}/posts.json`, {
         observe: 'events',
+        responseType: 'text',
       })
       .pipe(
         tap((event) => {

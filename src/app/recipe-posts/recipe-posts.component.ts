@@ -69,4 +69,11 @@ export class RecipePostsComponent implements OnInit, OnDestroy {
   onHandleError() {
     this.error = null;
   }
+
+  /**
+   * Reload the page
+   */
+  onReload() {
+    window.location.reload();
+  }
 }

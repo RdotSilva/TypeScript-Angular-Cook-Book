@@ -7,6 +7,9 @@ import { config } from '../../../config';
 export class DataStorageService {
   constructor(private http: HttpClient, private recipeService: RecipeService) {}
 
+  /**
+   * Make HTTP put request to Firebase server w/ recipe data
+   */
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http

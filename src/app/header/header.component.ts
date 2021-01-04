@@ -8,6 +8,9 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService) {}
 
+  /**
+   * Save data to Firebase database
+   */
   onSaveData() {
     this.dataStorageService.storeRecipes();
   }

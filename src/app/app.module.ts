@@ -19,9 +19,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { RecipeServersComponent } from './recipe-servers/recipe-servers.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-import { RecipePostsComponent } from './recipe-posts/recipe-posts.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptorService } from './recipe-posts/auth-interceptor.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +37,6 @@ import { AuthInterceptorService } from './recipe-posts/auth-interceptor.service'
     RecipeServersComponent,
     ShortenPipe,
     FilterPipe,
-    RecipePostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,15 +46,7 @@ import { AuthInterceptorService } from './recipe-posts/auth-interceptor.service'
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [
-    ShoppingListService,
-    RecipeService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-  ],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

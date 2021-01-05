@@ -20,6 +20,9 @@ export class DataStorageService {
       });
   }
 
+  /**
+   * Make HTTP get request to Firebase server to fetch recipe data
+   */
   fetchRecipes() {
     this.http.get<Recipe[]>(`${config.url}`).subscribe((recipes) => {
       this.recipeService.setRecipes(recipes);

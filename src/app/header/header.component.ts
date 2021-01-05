@@ -15,6 +15,9 @@ export class HeaderComponent {
     this.dataStorageService.storeRecipes();
   }
 
+  /**
+   * Fetch data from Firebase database
+   */
   onFetchData() {
     this.dataStorageService.fetchRecipes();
   }

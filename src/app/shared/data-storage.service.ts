@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { config } from '../../../config';
 import { Recipe } from '../recipes/recipe.model';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
@@ -25,20 +25,18 @@ export class DataStorageService {
    * Make HTTP get request to Firebase server to fetch recipe data
    */
   fetchRecipes() {
-    this.http
-      .get<Recipe[]>(`${config.url}`)
-      .pipe(
-        map((recipes) => {
-          return recipes.map((recipe) => {
-            return {
-              ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : [],
-            };
-          });
-        })
-      )
-      .subscribe((recipes) => {
+    return this.http.get<Recipe[]>(`${config.url}`).pipe(
+      map((recipes) => {
+        return recipes.map((recipe) => {
+          return {
+            ...recipe,
+            ingredients: recipe.ingredients ? recipe.ingredients : [],
+          };
+        });
+      }),
+      tap((recipes) => {
         this.recipeService.setRecipes(recipes);
-      });
+      })
+    );
   }
 }

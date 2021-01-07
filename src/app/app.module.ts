@@ -20,6 +20,7 @@ import { RecipeServersComponent } from './recipe-servers/recipe-servers.componen
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     RecipeServersComponent,
     ShortenPipe,
     FilterPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

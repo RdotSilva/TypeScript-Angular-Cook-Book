@@ -11,7 +11,7 @@ interface AuthResponseData {
   refreshToken: string;
   expiresIn: string;
   localId: string;
-}
+  registered?: boolean;
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -42,4 +42,6 @@ export class AuthService {
         })
       );
   }
+
+ 
 }

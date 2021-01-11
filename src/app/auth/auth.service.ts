@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { config } from '../../../config';
 
-interface AuthResponseData {
+export interface AuthResponseData {
   kind: string;
   idToken: string;
   email: string;
@@ -12,6 +12,7 @@ interface AuthResponseData {
   expiresIn: string;
   localId: string;
   registered?: boolean;
+}
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -44,12 +45,13 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.http
-      .post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${config.key}
-    `, {
-      email: email,
-      password: password,
-      returnSecureToken: true,
-    }), 
+    return this.http.post<AuthResponseData>(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${config.key}`,
+      {
+        email: email,
+        password: password,
+        returnSecureToken: true,
+      }
+    );
   }
 }

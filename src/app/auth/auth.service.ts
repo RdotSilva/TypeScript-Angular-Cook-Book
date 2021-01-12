@@ -33,20 +33,7 @@ export class AuthService {
       )
       .pipe(
         catchError(this.handleError),
-        tap((resData) => {
-          const expirationDate = new Date(
-            new Date().getTime() + +resData.expiresIn * 1000
-          );
-
-          const user = new User(
-            resData.email,
-            resData.localId,
-            resData.idToken,
-            expirationDate
-          );
-
-          this.user.next(user);
-        })
+        tap((resData) => {})
       );
   }
 
@@ -61,6 +48,19 @@ export class AuthService {
         }
       )
       .pipe(catchError(this.handleError));
+  }
+
+  private handleAuthentication(
+    email: string,
+    userId: string,
+    token: string,
+    expiresIn: number
+  ) {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+
+    const user = new User(email, userId, token, expirationDate);
+
+    this.user.next(user);
   }
 
   private handleError(errorRes: HttpErrorResponse) {

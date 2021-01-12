@@ -41,6 +41,9 @@ export class RecipeServersComponent {
 
   filteredStatus = '';
 
+  /**
+   * Fetch the different statuses of the servers in the list
+   */
   getStatusClasses(server: {
     instanceType: string;
     name: string;
@@ -54,6 +57,9 @@ export class RecipeServersComponent {
     };
   }
 
+  /**
+   * Add a new server to the current list of servers
+   */
   onAddServer() {
     this.servers.push({
       instanceType: 'small',

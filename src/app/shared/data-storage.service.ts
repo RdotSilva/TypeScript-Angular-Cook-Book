@@ -30,13 +30,7 @@ export class DataStorageService {
    * Make HTTP get request to Firebase server to fetch recipe data
    */
   fetchRecipes() {
-    return this.authService.user.pipe(
-      take(1),
-      exhaustMap((user) => {
-        return this.http.get<Recipe[]>(`${config.url}`, {
-          params: new HttpParams().set('auth', user.token),
-        });
-      }),
+    return this.http.get<Recipe[]>(`${config.url}`).pipe(
       map((recipes) => {
         return recipes.map((recipe) => {
           return {

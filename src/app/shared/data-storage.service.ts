@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { config } from '../../../config';
@@ -33,7 +33,9 @@ export class DataStorageService {
     return this.authService.user.pipe(
       take(1),
       exhaustMap((user) => {
-        return this.http.get<Recipe[]>(`${config.url}`);
+        return this.http.get<Recipe[]>(`${config.url}`, {
+          params: new HttpParams().set('auth', user.token),
+        });
       }),
       map((recipes) => {
         return recipes.map((recipe) => {

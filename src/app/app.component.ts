@@ -11,6 +11,9 @@ export class AppComponent implements OnInit {
 
   constructor(private authService: AuthService) {}
 
+  /**
+   * Try to automatically log user in on initial loading
+   */
   ngOnInit() {
     this.authService.autoLogin();
   }

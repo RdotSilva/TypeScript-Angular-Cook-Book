@@ -68,6 +68,9 @@ export class AuthService {
       );
   }
 
+  /**
+   * Automatically log a user in if their user data is in local storage
+   */
   autoLogin() {
     const userData: {
       email: string;
@@ -92,6 +95,9 @@ export class AuthService {
     }
   }
 
+  /**
+   * Log user out and redirect them to auth page
+   */
   logout() {
     this.user.next(null);
     this.router.navigate(['/auth']);
